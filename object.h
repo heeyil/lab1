@@ -65,7 +65,7 @@ void Object::setProperty(const string &key, const T &value){
     if (this->getProperty<T>(key) == nullptr){
         objectMeta->PropertyMap.emplace(key, value);
     }else{
-
+        objectMeta->PropertyMap[key] = value; // 键值对(key, value)已经存在,更新value的值
     }
 }
 
@@ -89,7 +89,7 @@ int Object::propertiesNum() const{
 
 // 添加事件监听器
 void Object::addEventListener(const string &eventName, const EventHandler &handler){
-
+    
 }
 
 // 分发事件
